@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/view/home.dart';
-import 'package:myapp/view/search.dart';
-import 'package:myapp/view/notification.dart';
-import 'package:myapp/view/message.dart';
-import 'package:myapp/view/drawer.dart';
+import 'package:myapp/view/root/home.dart';
+import 'package:myapp/view/root/search.dart';
+import 'package:myapp/view/root/notification.dart';
+import 'package:myapp/view/root/message.dart';
+import 'package:myapp/view/drawer/drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // TODO StatlessにしてProviderパターンで実装する
