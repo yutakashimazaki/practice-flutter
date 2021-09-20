@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/view/root/home.dart';
+import 'package:myapp/view/root/modal.dart';
 import 'package:myapp/view/root/search.dart';
 import 'package:myapp/view/root/notification.dart';
 import 'package:myapp/view/root/message.dart';
@@ -88,7 +89,12 @@ class RootViewState extends State<RootView> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          // TODO テキスト入力のモーダルを表示
+          Navigator.push(
+            context, MaterialPageRoute(
+              builder: (context) => const ModalView(),
+              fullscreenDialog: true,
+            )
+          );
         },
         child: const FaIcon(FontAwesomeIcons.featherAlt, size: 22.0),
       )

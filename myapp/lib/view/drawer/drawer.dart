@@ -71,9 +71,11 @@ class LeftDrawerView extends StatelessWidget {
       default:
        break;
     }
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return forwardingView;
-    }));
+    Navigator.push(
+      context, MaterialPageRoute(
+        builder: (context) => forwardingView
+      )
+    );
   }
 
   @override
