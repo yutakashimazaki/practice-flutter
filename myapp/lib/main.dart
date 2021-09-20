@@ -21,6 +21,7 @@ class App extends StatelessWidget {
             fontSize: 20.0,
             fontWeight: FontWeight.w600,
           ),
+          iconTheme: IconThemeData(color: Colors.grey),
           elevation: 0.4,
         )
       ),

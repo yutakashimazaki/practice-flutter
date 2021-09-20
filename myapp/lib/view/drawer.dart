@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:myapp/view/drawer/book_mark.dart';
+import 'package:myapp/view/drawer/list.dart';
+import 'package:myapp/view/drawer/moment.dart';
+import 'package:myapp/view/drawer/profile.dart';
 
 class LeftDrawerView extends StatelessWidget {
   const LeftDrawerView({Key? key}) : super(key: key);
@@ -8,40 +12,69 @@ class LeftDrawerView extends StatelessWidget {
     fontSize: 20.0,
     fontWeight: FontWeight.w300
   );
-  static const items = [
-    ListTile(
-      title: Text(
-        'profile',
-        style: listTextStyle,
+
+  List<ListTile> generateDrawerList(BuildContext context) {
+    return [
+      ListTile(
+        title: const Text(
+          'profile',
+          style: listTextStyle,
+        ),
+        leading: const FaIcon(FontAwesomeIcons.user, size: 20.0),
+        horizontalTitleGap: 0.0,
+        onTap: () => drawerNavigation(context, DrawerForwardingIndex.profile),
       ),
-      leading: FaIcon(FontAwesomeIcons.user, size: 20.0),
-      horizontalTitleGap: 0.0
-    ),
-    ListTile(
-      title: Text(
-        'list',
-        style: listTextStyle,
+      ListTile(
+        title: const Text(
+          'list',
+          style: listTextStyle,
+        ),
+        leading: const FaIcon(FontAwesomeIcons.list, size: 20.0),
+        horizontalTitleGap: 0.0,
+        onTap: () => drawerNavigation(context, DrawerForwardingIndex.list),
       ),
-      leading: FaIcon(FontAwesomeIcons.list, size: 20.0),
-      horizontalTitleGap: 0.0
-    ),
-    ListTile(
-      title: Text(
-        'book mark',
-        style: listTextStyle,
+      ListTile(
+        title: const Text(
+          'book mark',
+          style: listTextStyle,
+        ),
+        leading: const FaIcon(FontAwesomeIcons.bookmark, size: 20.0),
+        horizontalTitleGap: 0.0,
+        onTap: () => drawerNavigation(context, DrawerForwardingIndex.bookMark),
       ),
-      leading: FaIcon(FontAwesomeIcons.bookmark, size: 20.0),
-      horizontalTitleGap: 0.0
-    ),
-    ListTile(
-      title: Text(
-        'moment',
-        style: listTextStyle,
+      ListTile(
+        title: const Text(
+          'moment',
+          style: listTextStyle,
+        ),
+        leading: const FaIcon(FontAwesomeIcons.bolt, size: 20.0),
+        horizontalTitleGap: 0.0,
+        onTap: () => drawerNavigation(context, DrawerForwardingIndex.moment),
       ),
-      leading: FaIcon(FontAwesomeIcons.bolt, size: 20.0),
-      horizontalTitleGap: 0.0
-    ),
-  ];
+    ];
+  } 
+
+  void drawerNavigation(BuildContext context, DrawerForwardingIndex index) {
+    Widget forwardingView = const ProfileView();
+    switch (index) {
+      case DrawerForwardingIndex.profile:
+        break;
+      case DrawerForwardingIndex.list:
+        forwardingView = const MyListView();
+        break;
+      case DrawerForwardingIndex.bookMark:
+        forwardingView = const BookMarkView();
+        break;
+      case DrawerForwardingIndex.moment:
+        forwardingView = const MomentView();
+        break;
+      default:
+       break;
+    }
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return forwardingView;
+    }));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +109,17 @@ class LeftDrawerView extends StatelessWidget {
         ),
         Expanded(
           child: ListView(
-            children: items
+            children: generateDrawerList(context)
           ),
         )
       ],
       )
     );
   }  
+}
+enum DrawerForwardingIndex {
+  profile,
+  list,
+  bookMark,
+  moment
 }
