@@ -21,7 +21,7 @@ class App extends StatelessWidget {
             fontSize: 20.0,
             fontWeight: FontWeight.w600,
           ),
-          elevation: 0.0,
+          elevation: 0.4,
         )
       ),
       home: const RootView(),

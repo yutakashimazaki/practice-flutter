@@ -3,6 +3,7 @@ import 'package:myapp/view/home.dart';
 import 'package:myapp/view/search.dart';
 import 'package:myapp/view/notification.dart';
 import 'package:myapp/view/message.dart';
+import 'package:myapp/view/drawer.dart';
 
 // TODO StatlessにしてProviderパターンで実装する
 class RootView extends StatefulWidget {
@@ -68,6 +69,7 @@ class RootViewState extends State<RootView> {
             onPageChanged: onTap,
             children: _views
       ),
+      drawer: const LeftDrawerView(),
       bottomNavigationBar: BottomNavigationBar(
         items: _tabBarItems,
         currentIndex: _selectedIndex,
