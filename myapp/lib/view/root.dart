@@ -4,6 +4,7 @@ import 'package:myapp/view/search.dart';
 import 'package:myapp/view/notification.dart';
 import 'package:myapp/view/message.dart';
 import 'package:myapp/view/drawer.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // TODO StatlessにしてProviderパターンで実装する
 class RootView extends StatefulWidget {
@@ -89,7 +90,7 @@ class RootViewState extends State<RootView> {
         onPressed: (){
           // TODO テキスト入力のモーダルを表示
         },
-        child: const Icon(Icons.edit_outlined),
+        child: const FaIcon(FontAwesomeIcons.featherAlt, size: 22.0),
       )
     );
   }  

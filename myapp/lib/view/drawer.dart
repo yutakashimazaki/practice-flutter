@@ -55,19 +55,12 @@ class LeftDrawerView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Container(
-                  height: 56.0,
-                  width: 56.0,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.grey,
-                    image: DecorationImage(
-                      image: AssetImage('res/image/user.png'),
-                      fit: BoxFit.fill
-                    )
-                  ),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 8.0),
+                child: CircleAvatar(
+                  radius: 24.0,
+                  backgroundColor: Colors.grey,
+                  backgroundImage: AssetImage('res/image/user.png'),
                 ),
               ),
               Text(
