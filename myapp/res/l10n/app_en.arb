@@ -1,0 +1,23 @@
+{
+    "@@locale": "en",
+    "label_root_bottom_navigation_bar_home": "Home",
+    "label_root_bottom_navigation_bar_search": "Search",
+    "label_root_bottom_navigation_bar_Notification": "notification",
+    "label_root_bottom_navigation_bar_Message": "message",
+    "label_home_appbar_title": "Home",
+    "label_search_appbar_title": "Search",
+    "label_notification_appbar_title": "Notification",
+    "label_message_appbar_title": "Message",
+    "label_drawer_profile_title": "profile",
+    "label_drawer_list_title": "list",
+    "label_drawer_bookmark_title": "book mark",
+    "label_drawer_moment_title": "moment",
+    "label_profile_appbar_title": "Profile",
+    "label_list_appbar_title": "List",
+    "label_bookmark_appbar_title": "Book Mark",
+    "label_moment_appbar_title": "Moment",
+    "label_common_button_cancel": "cancel",
+    "label_post_button": "post",
+    "message_common_undone": "Coming Soon...",
+    "message_post_placeholder": "What are you doing?"
+}

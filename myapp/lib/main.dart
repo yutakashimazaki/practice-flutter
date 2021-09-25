@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'view/root/root.dart';
 
 void main() {
@@ -25,6 +26,8 @@ class App extends StatelessWidget {
           elevation: 0.4,
         )
       ),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const RootView(),
     );
   }

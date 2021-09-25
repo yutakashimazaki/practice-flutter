@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/extension/extension_widget.dart';
 
 class MessageView extends StatelessWidget {
   const MessageView({Key? key}) : super(key: key);
@@ -7,11 +8,11 @@ class MessageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Message'),
+        title: Text(l10n(context).label_message_appbar_title),
       ),
       body: Center(
         child: Text(
-          'Coming Soon...',
+          l10n(context).message_common_undone,
           style: Theme.of(context).textTheme.bodyText1,
         ),
       ),

@@ -1,0 +1,23 @@
+{
+    "@@locale": "ja",
+    "label_root_bottom_navigation_bar_home": "ホーム",
+    "label_root_bottom_navigation_bar_search": "検索",
+    "label_root_bottom_navigation_bar_Notification": "通知",
+    "label_root_bottom_navigation_bar_Message": "メッセージ",
+    "label_home_appbar_title": "ホーム",
+    "label_search_appbar_title": "検索",
+    "label_notification_appbar_title": "通知",
+    "label_message_appbar_title": "メッセージ",
+    "label_drawer_profile_title": "プロフィール",
+    "label_drawer_list_title": "リスト",
+    "label_drawer_bookmark_title": "ブックマーク",
+    "label_drawer_moment_title": "モーメント",
+    "label_profile_appbar_title": "プロフィール",
+    "label_list_appbar_title": "リスト",
+    "label_bookmark_appbar_title": "ブックマーク",
+    "label_moment_appbar_title": "モーメント",
+    "label_common_button_cancel": "キャンセル",
+    "label_post_button": "投稿",
+    "message_common_undone": "しばらくお待ちください...",
+    "message_post_placeholder": "今どうしている？"
+}

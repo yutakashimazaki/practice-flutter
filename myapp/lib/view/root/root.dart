@@ -19,31 +19,35 @@ class RootViewState extends State<RootView> {
   int _selectedIndex = 0;
   PageController? _pageController;
 
-  static const List<BottomNavigationBarItem> _tabBarItems = [
-    BottomNavigationBarItem(
-      icon: Icon(Icons.home_outlined),
-      label: 'Home',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.search_outlined),
-      label: 'Search',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.notifications_outlined),
-      label: 'Notification',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.mail_outlined),
-      label: 'Message',
-    ),
-  ];
-
   static const List<Widget> _views = [
     HomeView(),
     SearchView(),
     NotificationView(),
     MessageView(),
   ];
+
+  // TODO StatelessWedgetにしたタイミングでlabelもl10nする
+  // Statelessにする想定なのでStateのextensionではあえてやらない
+  List<BottomNavigationBarItem> tabBarItems(BuildContext context) {
+    return const [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home_outlined),
+        label: 'Home',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.search_outlined),
+        label: 'Search',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.notifications_outlined),
+        label: 'Notification',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.mail_outlined),
+        label: 'Message',
+      ),
+    ];
+  }
 
   void onTap(int index) {
     setState(() {
@@ -73,7 +77,7 @@ class RootViewState extends State<RootView> {
       ),
       drawer: const LeftDrawerView(),
       bottomNavigationBar: BottomNavigationBar(
-        items: _tabBarItems,
+        items: tabBarItems(context),
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.blue,

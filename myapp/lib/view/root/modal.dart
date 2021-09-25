@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:myapp/extension/extension_widget.dart';
 
 class ModalView extends StatelessWidget {
   const ModalView({Key? key}) : super(key: key);
@@ -14,9 +15,9 @@ class ModalView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextButton(
-              child: const Text(
-                'cancel',
-                style: TextStyle(
+              child: Text(
+                l10n(context).label_common_button_cancel,
+                style: const TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w300,
                   color: Colors.blue,
@@ -32,9 +33,9 @@ class ModalView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: ElevatedButton(
-              child: const Text(
-                'post',
-                style: TextStyle(
+              child: Text(
+                l10n(context).label_post_button,
+                style: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w500,
                 ),
@@ -67,8 +68,8 @@ class ModalView extends StatelessWidget {
               keyboardType: TextInputType.multiline,
               maxLines: null,
               autofocus: true,
-              decoration: const InputDecoration(
-                hintText: 'What are you doing?',
+              decoration: InputDecoration(
+                hintText: l10n(context).message_post_placeholder,
                 border: InputBorder.none,
               ),
             )

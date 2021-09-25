@@ -5,6 +5,7 @@ import 'package:myapp/view/drawer/book_mark.dart';
 import 'package:myapp/view/drawer/list.dart';
 import 'package:myapp/view/drawer/moment.dart';
 import 'package:myapp/view/drawer/profile.dart';
+import 'package:myapp/extension/extension_widget.dart';
 
 class LeftDrawerView extends StatelessWidget {
   const LeftDrawerView({Key? key}) : super(key: key);
@@ -13,11 +14,11 @@ class LeftDrawerView extends StatelessWidget {
     fontWeight: FontWeight.w300
   );
 
-  List<ListTile> generateDrawerList(BuildContext context) {
+  List<ListTile> drawerList(BuildContext context) {
     return [
       ListTile(
-        title: const Text(
-          'profile',
+        title: Text(
+          l10n(context).label_drawer_profile_title,
           style: listTextStyle,
         ),
         leading: const FaIcon(FontAwesomeIcons.user, size: 20.0),
@@ -25,8 +26,8 @@ class LeftDrawerView extends StatelessWidget {
         onTap: () => drawerNavigation(context, DrawerForwardingIndex.profile),
       ),
       ListTile(
-        title: const Text(
-          'list',
+        title: Text(
+          l10n(context).label_drawer_list_title,
           style: listTextStyle,
         ),
         leading: const FaIcon(FontAwesomeIcons.list, size: 20.0),
@@ -34,8 +35,8 @@ class LeftDrawerView extends StatelessWidget {
         onTap: () => drawerNavigation(context, DrawerForwardingIndex.list),
       ),
       ListTile(
-        title: const Text(
-          'book mark',
+        title: Text(
+          l10n(context).label_drawer_bookmark_title,
           style: listTextStyle,
         ),
         leading: const FaIcon(FontAwesomeIcons.bookmark, size: 20.0),
@@ -43,8 +44,8 @@ class LeftDrawerView extends StatelessWidget {
         onTap: () => drawerNavigation(context, DrawerForwardingIndex.bookMark),
       ),
       ListTile(
-        title: const Text(
-          'moment',
+        title: Text(
+          l10n(context).label_drawer_moment_title,
           style: listTextStyle,
         ),
         leading: const FaIcon(FontAwesomeIcons.bolt, size: 20.0),
@@ -99,11 +100,11 @@ class LeftDrawerView extends StatelessWidget {
                 ),
               ),
               Text(
-                'User Name',
+                'User Name', // TODO ラベルではなくセッションから取得
                 style: Theme.of(context).textTheme.headline6,
               ),
               Text(
-                '@acountId',
+                '@acountId', // TODO ラベルではなくセッションから取得
                 style: Theme.of(context).textTheme.bodyText1,
               ),
             ],),
@@ -111,7 +112,7 @@ class LeftDrawerView extends StatelessWidget {
         ),
         Expanded(
           child: ListView(
-            children: generateDrawerList(context)
+            children: drawerList(context)
           ),
         )
       ],
